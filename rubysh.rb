@@ -15,9 +15,10 @@ module RubySH
 		end
 		def prompt
 			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}"
-
 			loop {
-				buf = Readline::readline("% ", true)
+				@prompt = "#{current_dir?.gsub(ENV['HOME'], '~').white.bright}"
+
+				buf = Readline::readline(@prompt+"% ", true)
 				Readline::HISTORY.push(buf)
 				enter(buf)				
 			}
