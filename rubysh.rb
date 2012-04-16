@@ -17,8 +17,9 @@ module RubySH
 			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}"
 
 			loop {
-				buf = Readline.readline("#{current_dir?.gsub(ENV['HOME'], '~').white.bright} % ", true)
-    			enter(buf)				
+				buf = Readline::readline("#{current_dir?.gsub(ENV['HOME'], '~').white.bright} % ", true)
+				Readline::HISTORY.push(buf)
+				enter(buf)				
 			}
 
 		end
@@ -64,6 +65,8 @@ module RubySH
 							end
 					end
 				
+			else
+				Readline::HISTORY.pop
 			end
 		
 		end
