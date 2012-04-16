@@ -24,6 +24,9 @@ If this doesn't works, open a new window and use `killall ruby`. That should kil
 - It has a little config file (`.rsh`) in the script directory. It contains the version and the state of debug mode. (Debug mode shows the command and the arguments on every enter and makes it so you can Ctrl-C and quit it.)
 - It has been only tested on Mac OS X Lion 10.7.3 and Ruby 1.9.3-p125
 
+![RSH](http://i.imgur.com/eRUcY.png)
+
+
 #### File description
 
 - The `utils.rb` contains a modified `Screen` module with the ability of cleaning the screen (Similar as the `clear` command, but in code, use it with `Screen.clear`)
