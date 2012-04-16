@@ -1,3 +1,3 @@
 require './rubysh.rb'
-RubySH::Shell.new(true).prompt	
+RubySH::Shell.new.prompt
 

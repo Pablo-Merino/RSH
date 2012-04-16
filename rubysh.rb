@@ -2,7 +2,7 @@ require './require.rb'
 
 module RubySH
 	class Shell
-		def initialize(debug)
+		def initialize
 			@config = YAML.load_file(".rsh")
 
 			@version = @config['version']
