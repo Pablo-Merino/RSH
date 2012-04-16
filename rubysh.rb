@@ -15,10 +15,10 @@ module RubySH
 		end
 		def prompt
 			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}"
-
 			loop {
-				buf = Readline.readline("#{current_dir?.gsub(ENV['HOME'], '~').white.bright} % ", true)
-    			enter(buf)				
+				# apparently colorize gem makes readlines glitch...
+				buf = Readline::readline("#{current_dir?.gsub(ENV['HOME'], '~')} % ", true)
+				enter(buf)				
 			}
 
 		end
@@ -64,6 +64,8 @@ module RubySH
 							end
 					end
 				
+			else
+				Readline::HISTORY.pop
 			end
 		
 		end
