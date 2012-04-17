@@ -34,7 +34,11 @@ module RubySH
 					case command
 						when 'cd'
 							begin
-								Dir.chdir(args)
+								if args == "~"
+									Dir.chdir(ENV['HOME'])
+								else
+									Dir.chdir(args)
+								end
 							rescue Errno::ENOENT => e
 								puts "#{args}: Directory not found!".red
 							end
