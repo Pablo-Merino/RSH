@@ -10,14 +10,13 @@ module RubySH
 				@debug = true
 			end
 			Screen.clear
-			stty_save = `stty -g`.chomp
-			trap('SIGINT') { system('stty', stty_save); exit unless @debug.nil? }
+			trap('SIGINT') { exit unless @debug.nil? }
 		end
 		def prompt
-			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}"
+			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}".bright.cyan
 			loop {
 				# apparently colorize gem makes readlines glitch...
-				buf = Readline::readline("#{current_dir?.gsub(ENV['HOME'], '~')} % ", true)
+				buf = Readline::readline("[#{current_dir?.gsub(ENV['HOME'], '~')}]% ", true)
 				enter(buf)				
 			}
 
