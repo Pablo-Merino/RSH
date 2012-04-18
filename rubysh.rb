@@ -3,7 +3,11 @@ require './require.rb'
 module RubySH
 	class Shell
 		def initialize
-			@config = YAML.load_file(".rsh")
+			if File.exists?(".rsh")
+				@config = YAML.load_file(".rsh")
+			else
+				@config = YAML.load_file("~/.rsh")
+			end
 
 			@version = @config['version']
 			if @config['debug']
@@ -61,7 +65,10 @@ module RubySH
 
 							elsif command?(command)
 								puts "command: #{command}\nargs: #{args}" unless @debug.nil?
-								system("#{command} #{args}")
+								pid = fork {
+									exec "#{command} #{args}"
+								}
+								Process.wait pid
 							else
 								puts "rsh: '#{command}' not found".red
 							end
