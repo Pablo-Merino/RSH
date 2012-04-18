@@ -1,3 +1,4 @@
+# encoding: utf-8
 require './require.rb'
 
 module RubySH
@@ -20,7 +21,9 @@ module RubySH
 			puts "#{Time.now.strftime("%I:%M%p %m/%d/%Y")}".bright.cyan
 			loop {
 				# apparently colorize gem makes readlines glitch...
-				buf = Readline::readline("[#{current_dir?.gsub(ENV['HOME'], '~')}]% ", true)
+				prompt = parse_prompt(ENV['rsh_ps1'])
+
+				buf = Readline::readline(prompt, true)
 				enter(buf)				
 			}
 
@@ -47,7 +50,7 @@ module RubySH
 							end
 						when 'export'
 							args = args.split('=')
-							ENV[args[0]] = args[1]
+							ENV[args[0]] = args[1].gsub('"', '')
 						when 'quit'
 							exit
 						when 'help'
@@ -86,8 +89,9 @@ module RubySH
   			end
 		end
 
-		def current_dir?
-			Dir.pwd
+		def current_dir?(path_type)
+			path_type ? Dir.pwd.gsub(ENV['HOME'], '~') : Dir.pwd
+			
 		end
 
 		def eval_code(args)
@@ -101,7 +105,12 @@ module RubySH
 		def print_about
 			puts "RubySH (rsh) #{@version}".red
 			puts "RubySH is a UNIX shell completely written using Ruby language.".light_red
-			puts "Built by Pablo Merino\n"
+			puts "Built by Pablo Merino ☭\n"
+		end
+
+		def parse_prompt(prompt_str)
+			returner = prompt_str.gsub(/\/p/, current_dir?(true)).gsub(/\/u/, ENV['USER']).gsub(/\/t/, Time.now.strftime("%I:%M%p %m/%d/%Y"))
+			returner
 		end
 	end
 end

@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "readline"
 require 'yaml'
 
@@ -300,7 +301,7 @@ module RubySH
 		def print_about
 			puts "RubySH (rsh) #{@version}".red
 			puts "RubySH is a UNIX shell completely written using Ruby language.".light_red
-			puts "Built by Pablo Merino\n"
+			puts "Built by Pablo Merino ☭\n"
 		end
 	end
 end
