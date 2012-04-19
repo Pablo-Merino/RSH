@@ -248,7 +248,6 @@ module RubySH
         buf = Readline::readline(prompt, true)
         enter(buf)        
       }
-
     end
 
     def enter(data)
