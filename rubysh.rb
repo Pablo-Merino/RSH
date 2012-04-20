@@ -126,6 +126,12 @@ module RubySH
       puts "Built by Pablo Merino ☭\n"
     end
 
+    def print_help
+      puts "RSH HELP".cyan.bright
+      puts "RSH is an integrated shell written in Ruby"
+      puts "You can use normal commands, execute scripts, and normal things, but you can also use the `eval \"ruby code\"' command to evaluate Ruby code"
+    end
+
     def parse_prompt(prompt_str)
       returner = prompt_str.gsub(/\/p/, current_dir?(true)).gsub(/\/u/, ENV['USER']).gsub(/\/t/, Time.now.strftime("%I:%M%p %m/%d/%Y"))
       returner
