@@ -1,5 +1,6 @@
 # encoding: utf-8
-require './require.rb'
+require "readline"
+require 'yaml'
 module RubySH
   #
   # The Shell class

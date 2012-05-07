@@ -1,5 +1,9 @@
 # RSH
 
+#### Install RSH right now!
+
+To install RSH right now you just have to `gem install rsh`.
+
 #### What is RSH?
 RSH is a UNIX and SH compliant shell built in Ruby. It features all the traditional Shell commands (basically anything in the `$PATH`) and evaluating ruby code:
 
@@ -26,14 +30,6 @@ If this doesn't works, open a new window and use `killall ruby`. That should kil
 
 ![RSH](http://i.imgur.com/eRUcY.png)
 
-
-#### File description
-
-- The `utils.rb` contains a modified `Screen` module with the ability of cleaning the screen (Similar as the `clear` command, but in code, use it with `Screen.clear`)
-- The `require.rb`is just a file with all the `requires` needed, so I don't have to add all of them.
-- The `s.rb` file is just the launcher. You can launch a console with this code 
-`RubySH::Shell.new.prompt`
-- The `rubysh.rb` file contains the actual shell module.
 
 #### License
 rsh - RSH is a UNIX and SH compliant shell built in Ruby
