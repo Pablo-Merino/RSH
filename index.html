@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>RSH by Pablo-Merino</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>RSH</h1>
+        <p>RSH is a SH compliant shell, completely coded in Ruby</p>
+        <p class="view"><a href="https://github.com/Pablo-Merino/RSH">View the Project on GitHub <small>Pablo-Merino/RSH</small></a></p>
+        <ul>
+          <li><a href="https://github.com/Pablo-Merino/RSH/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Pablo-Merino/RSH/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Pablo-Merino/RSH">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>RSH</h1>
+
+<h4>Install RSH right now!</h4>
+
+<p>To install RSH right now you just have to <code>gem install rsh</code>.</p>
+
+<h4>What is RSH?</h4>
+
+<p>RSH is a UNIX and SH compliant shell built in Ruby. It features all the traditional Shell commands (basically anything in the <code>$PATH</code>) and evaluating ruby code:</p>
+
+<ul>
+<li><code>eval puts "some ruby code can be put here"</code></li>
+</ul><p>This is in alpha stage, it might contain bugs (it was built in a few hours :P)</p>
+
+<h4>How do I start it?</h4>
+
+<p>It's simple, get on Terminal, <code>cd</code> to he directory and run <code>ruby s.rb</code>. Your terminal screen will clear and the RSH prompt will appear.</p>
+
+<h4>How do I kill it?</h4>
+
+<p>If you didn't enabled debug mode just use <code>quit</code>. Else just use Ctrl-C.</p>
+
+<p>If this doesn't works, open a new window and use <code>killall ruby</code>. That should kill it.</p>
+
+<h4>More info</h4>
+
+<ul>
+<li>It doesn't needs any gems for now</li>
+<li>It uses <a href="https://github.com/fazibear/colorize">Colorize</a> by <a href="https://github.com/fazibear/">fazibear</a> but slighty modified for bright (bold) letters.- </li>
+<li>It has a little config file (<code>.rsh</code>) in the script directory. It contains the version and the state of debug mode. (Debug mode shows the command and the arguments on every enter and makes it so you can Ctrl-C and quit it.)</li>
+<li>It has been only tested on:
+
+<ul>
+<li> Mac OS X Lion 10.7.3 and Ruby 1.9.3-p125</li>
+<li> Fedora Core 16 and Ruby 1.9.3-p125</li>
+</ul>
+</li>
+</ul><p><img src="http://i.imgur.com/eRUcY.png" alt="RSH"></p>
+
+<h4>License</h4>
+
+<p>rsh - RSH is a UNIX and SH compliant shell built in Ruby</p>
+
+<p>Copyright (C) 2012 Pablo Merino</p>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/Pablo-Merino">Pablo-Merino</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
